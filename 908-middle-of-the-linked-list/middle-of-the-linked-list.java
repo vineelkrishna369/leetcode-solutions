@@ -10,19 +10,33 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-       int cnt=0;
-       ListNode curr = head;
-       while(curr!=null){
-        curr = curr.next;
+    //    int cnt=0;
+    //    ListNode curr = head;
+    //    while(curr!=null){
+    //     curr = curr.next;
+    //     cnt++;
+    //    }
+    //    int f_cnt = cnt/2;
+    //    curr = head;
+    //    while(f_cnt>0){
+    //     curr=curr.next;
+    //     f_cnt--;
+    //    }
+    //   return curr;
+    ListNode curr = head;
+    int cnt=0;
+    while(curr!=null){
+        curr= curr.next;
         cnt++;
-       }
-       int f_cnt = cnt/2;
-       curr = head;
-       while(f_cnt>0){
-        curr=curr.next;
+    }
+    int f_cnt=cnt/2;
+   
+    curr = head;
+    while(f_cnt!=0){
+        curr = curr.next;
         f_cnt--;
-       }
-      return curr;
+    }
+    return curr;
 
         
     }
