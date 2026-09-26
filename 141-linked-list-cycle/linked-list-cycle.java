@@ -23,20 +23,32 @@ public class Solution {
         //     }
         // }
         // return false;
-        HashSet<ListNode> set = new HashSet<>();
-        ListNode curr = head;
-        while(curr!=null){
+        // HashSet<ListNode> set = new HashSet<>();
+        // ListNode curr = head;
+        // while(curr!=null){
             
-            if(!set.contains(curr)){
-                set.add(curr);
-            }
-            else{
-                return true;
-            }
-            curr = curr.next;
+        //     if(!set.contains(curr)){
+        //         set.add(curr);
+        //     }
+        //     else{
+        //         return true;
+        //     }
+        //     curr = curr.next;
             
-        }
-        return false;
-        
+        // }
+        // return false;
+        ListNode slow = head;
+ListNode fast = head;
+
+while(fast != null && fast.next != null){
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if(slow == fast){
+        return true;
+    }
+}
+
+return false;
     }
 }
