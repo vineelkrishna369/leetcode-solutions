@@ -8,25 +8,48 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+// class Solution {
+//     public boolean isPalindrome(ListNode head) {
+//         ArrayList<ListNode> list = new ArrayList<>();
+//         ListNode curr = head;
+//         while(curr!=null){
+//             list.add(curr);
+//             curr = curr.next;
+//         }
+//         int cnt=0;
+//         int n = list.size();
+//         for(int i=0;i<list.size();i++){
+//             if(list.get(i).val==list.get(n-i-1).val){
+//                 cnt++;
+//             }
+//         }
+//         if(cnt==n){
+//             return true;
+//         }
+//         return false;
+        
+//     }
+// }
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        ArrayList<ListNode> list = new ArrayList<>();
+
+        ArrayList<Integer> list = new ArrayList<>();
+
         ListNode curr = head;
-        while(curr!=null){
-            list.add(curr);
+
+        while(curr != null){
+            list.add(curr.val);
             curr = curr.next;
         }
-        int cnt=0;
+
         int n = list.size();
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).val==list.get(n-i-1).val){
-                cnt++;
+
+        for(int i = 0; i < n / 2; i++){
+            if(list.get(i) != list.get(n - i - 1)){
+                return false;
             }
         }
-        if(cnt==n){
-            return true;
-        }
-        return false;
-        
+
+        return true;
     }
 }
