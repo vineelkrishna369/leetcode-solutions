@@ -18,9 +18,10 @@ class Solution {
                     return false;
                 }
 
-                map.put(ch1, ch2);
-                reverse.put(ch2, ch1);
+               
             }
+             map.put(ch1, ch2);
+                reverse.put(ch2, ch1);
         }
 
         return true;
