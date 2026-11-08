@@ -13,12 +13,21 @@ class Solution {
         //         return i;
         //     }
         // }
-        while(cnt<=n){
-            if(!set.contains(cnt)){
-                return cnt;
-            }
-            cnt++;
+        // while(cnt<=n){
+        //     if(!set.contains(cnt)){
+        //         return cnt;
+        //     }
+        //     cnt++;
 
+        // }
+        // return cnt;
+        for(int i=1;i<=n;i++){
+            if(!set.contains(i)){
+                return i;
+            }
+            
+                cnt++;
+        
         }
         return cnt;
         
